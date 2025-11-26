@@ -1,4 +1,4 @@
-# 👋 Hi there, I'm Ritwika <img src="assets/lottie/cat_big.gif" width="110px" align="right"/>
+# Welcome to my research portfolio. <img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
 
 ## 👩‍🔬 Applied Scientist • Mechanistic Interpretability • Model Visualization
 
@@ -16,12 +16,12 @@ Here are some examples of the visuals I create 👇
 ---
 
 ### 🧠 MLP Training Animation  
-<img src="assets/plots/mlp_training.gif" width="600px"/>
+<img src="assets/plots/mlp_training.gif" />
 
 ---
 
 ### 🌱 Shallow vs Deep Model Training Curves  
-<img src="assets/plots/shallow_vs_deep_curves.png" width="600px"/>
+<img src="assets/plots/shallow_vs_deep_curves.png"/>
 
 ---
 
