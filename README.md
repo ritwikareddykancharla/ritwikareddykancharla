@@ -1,10 +1,15 @@
-# Hi, I am Ritwika. Welcome to my research portfolio. <img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
+# Hi, I'm Ritwika — welcome to my research portfolio.  
+<img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
 
-## 👩‍🔬 Applied Scientist • Neural Networks for Routing • Mechanistic Interpretability
+## 👩‍🔬 Research Scientist / Applied Scientist  
+### Neural Optimization • Routing Foundation Models • Mechanistic Interpretability
 
-I love visualizing how neural networks **think**, **learn**, and **develop structure**.
+My research focuses on **neural optimization for large-scale routing and supply-chain systems**. I work at the intersection of **mixed-integer programming (MILPs)**, **transformer architectures**, **diffusion priors**, and **world models**, with the goal of developing **Routing Foundation Models** that can reason, plan, and optimize complex networks with real-time inference.
 
-Here are some examples of the visuals I create 👇
+Traditional routing pipelines rely on MILPs and heuristics that become brittle or intractable at Amazon scale. Meanwhile, modern neural networks exhibit emergent abilities in optimization, meta-learning, and planning. My work aims to unify these worlds: building **differentiable surrogate solvers** that approximate combinatorial reasoning, while retaining the structure and guarantees of classical optimization.
+
+I am also deeply interested in **mechanistic interpretability**—understanding how neural routing models develop constraint circuits, represent flows, and perform multi-step refinement. Transparency is essential for high-stakes logistics systems, and my research emphasizes models that are both powerful and interpretable.
+
 
 ## 🔬 Research
 
@@ -56,23 +61,6 @@ A consolidated book-style document covering:
 - constraint circuits  
 - large-scale experiments  
 - foundation models for optimization  
-
----
-
-## 🔬 Visualization Examples
-
-### 🧭 2D Loss Landscape  
-<img src="assets/plots/loss_landscape.png" width="600px"/>
-
----
-
-### 🧠 MLP Training Animation  
-<img src="assets/plots/mlp_training.gif" />
-
----
-
-### 🌱 Shallow vs Deep Model Training Curves  
-<img src="assets/plots/shallow_vs_deep_curves.png"/>
 
 ---
 
