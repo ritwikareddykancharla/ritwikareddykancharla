@@ -14,9 +14,13 @@ I am also deeply interested in **mechanistic interpretability**—understanding 
 ## 🔬 Research
 
 ### 📄 MILP-Transformer: A Neural Surrogate MILP Solver with Constraint Experts  
-**Status:** Preprint (ICML 2026 submission)  
-[📘 PDF](https://raw.githubusercontent.com/ritwikareddykancharla/neural-milp-surrogate/main/paper/main.pdf) ·  
-[💻 Code](https://github.com/ritwikareddykancharla/neural-milp-surrogate)
+**Status:** Preprint (ICML 2026 submission)
+
+[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20-b31b1b.svg)](#)
+[![PDF](https://img.shields.io/badge/PDF-Main%20Paper-blue)](https://raw.githubusercontent.com/ritwikareddykancharla/neural-milp-surrogate/main/paper/main.pdf)
+[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/neural-milp-surrogate)
+[![Colab](https://img.shields.io/badge/Colab-Open%20Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/neural-milp-surrogate/blob/main/notebooks/00_setup.ipynb)
+
 
 A transformer-based neural surrogate for mixed-integer linear programs (MILPs), featuring:
 - Constraint-specialized Mixture-of-Experts  
@@ -52,32 +56,55 @@ Enables long-horizon planning on Amazon-style routing networks.
 
 ---
 
-### 📚 RoutingAGI: Unified Architecture for Routing Optimization  
-**Status:** Technical Monograph (100+ pages, in progress)  
-A consolidated book-style document covering:
-- MILP surrogates  
-- routing diffusion  
-- world models  
-- constraint circuits  
-- large-scale experiments  
-- foundation models for optimization  
+## 🔬 Research
 
 ---
 
-## 🚚 What I'm Working On — **RoutingAGI**
+### 📄 MILP-Transformer: A Neural Surrogate MILP Solver with Constraint Experts  
+**Status:** Preprint (ICML 2026 submission)
 
-I'm building **RoutingAGI**, a spatial-transformer + SSM architecture designed for  
-*Amazon-scale routing, spatial reasoning, and interpretable decision-making.*
+[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20(coming%20soon)-b31b1b.svg)](#)
+[![PDF](https://img.shields.io/badge/PDF-Main%20Paper-blue)](https://raw.githubusercontent.com/ritwikareddykanclarla/neural-milp-surrogate/main/paper/main.pdf)
+[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/neural-milp-surrogate)
+[![Colab](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/neural-milp-surrogate/blob/main/notebooks/00_setup.ipynb)
 
-RoutingAGI explores:
-
-- 🗺️ Graph-based spatial encoding  
-- 🌀 SSM/Mamba-style route planning  
-- 🧩 Constraint-aware MoE (capacity, SLAs, time windows)  
-- 📦 Multi-agent route generation  
-- 🔍 Full mechanistic transparency (attention circuits, activations, geometry)
-
-A routing model that not only performs…  
-but **explains itself**.
+**Abstract:**  
+A transformer-based neural surrogate for mixed-integer linear programs (MILPs).  
+The model integrates MILP algebra into attention using constraint violations and dual-like signals,  
+introduces constraint-specialized Mixture-of-Experts, and performs latent refinement steps that  
+approximate optimization. Achieves near-MILP feasibility and 50–100× faster inference on  
+50–200 node routing problems.
 
 ---
+
+### 📄 Diffusion Priors for Routing Optimization (Working Title)
+**Status:** Draft manuscript · ICML 2026 submission 
+
+[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20(coming%20soon)-b31b1b.svg)](#)
+[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/routing-diffusion)
+[![Colab](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/routing-diffusion/blob/main/notebooks/00_setup.ipynb)
+
+**Abstract:**  
+Explores diffusion-based generative priors for routing and flow optimization.  
+The diffusion process learns the geometry of feasible routing structures and performs  
+structure-aware denoising aligned with MILP constraints. Enables diverse route sampling,  
+feasibility restoration, and multi-sample proposal generation for surrogate MILP solvers.
+
+---
+
+### 📄 Routing World Models for Multi-step Planning (Working Title)
+**Status:** Draft manuscript · ICML 2026 submission
+
+[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20(coming%20soon)-b31b1b.svg)](#)
+[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/routing-world-model)
+[![Colab](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/routing-world-model/blob/main/notebooks/00_setup.ipynb)
+
+**Abstract:**  
+A MuZero-inspired routing world model that predicts congestion, flow propagation,  
+constraint evolution, and multi-step rollout effects. The latent dynamics model enables  
+long-horizon planning on Amazon-style routing networks and supports differentiable internal  
+lookahead for optimization-aware decision-making.
+
+---
+
+
