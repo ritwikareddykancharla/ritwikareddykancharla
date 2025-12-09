@@ -16,8 +16,8 @@ I am also deeply interested in **mechanistic interpretability**—understanding 
 
 ## 📄 **Routing Foundation Model (RFM): A Unified Neural Optimization Framework**  
 
-[![PDF](https://img.shields.io/badge/PDF-RFM%20Monograph-red)](https://ritwikareddykancharla.github.io/rfm.pdf)
-[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](#)
+[![PDF](https://img.shields.io/badge/PDF-Technical%20Monograph-red)](https://ritwikareddykancharla.github.io/rfm.pdf)
+[![Code](https://img.shields.io/badge/Code-GitHub%20(WIP)-2b3137?logo=github)](https://github.com/ritwikareddykancharla/rfm)
 [![Notebook](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](#)
 
 **Routing Foundation Model (RFM)** is my flagship research project:  
