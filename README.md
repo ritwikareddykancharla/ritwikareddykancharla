@@ -10,101 +10,96 @@ Traditional routing pipelines rely on MILPs and heuristics that become brittle o
 
 I am also deeply interested in **mechanistic interpretability**—understanding how neural routing models develop constraint circuits, represent flows, and perform multi-step refinement. Transparency is essential for high-stakes logistics systems, and my research emphasizes models that are both powerful and interpretable.
 
+---
 
-## 🔬 Research
+# Research
 
-### 📄 MILP-Transformer: A Neural Surrogate MILP Solver with Constraint Experts  
-**Status:** Preprint (ICML 2026 submission)
+## 📄 **Routing Foundation Model (RFM): A Unified Neural Optimization Framework**  
 
-[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20-b31b1b.svg)](#)
-[![PDF](https://img.shields.io/badge/PDF-Main%20Paper-blue)](https://raw.githubusercontent.com/ritwikareddykancharla/neural-milp-surrogate/main/paper/main.pdf)
-[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/neural-milp-surrogate)
-[![Colab](https://img.shields.io/badge/Colab-Open%20Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/neural-milp-surrogate/blob/main/notebooks/00_setup.ipynb)
+[![PDF](https://img.shields.io/badge/PDF-RFM%20Monograph-red)](https://ritwikareddykancharla.github.io/rfm.pdf)
+[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](#)
+[![Notebook](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](#)
 
+**Routing Foundation Model (RFM)** is my flagship research project:  
+a **full-stack neural optimization architecture for routing MILPs**, designed for Amazon-scale networks.
 
-A transformer-based neural surrogate for mixed-integer linear programs (MILPs), featuring:
-- Constraint-specialized Mixture-of-Experts  
-- Soft binary relaxations  
-- Latent refinement loops  
-- MILP-aware attention using primal–dual signals  
-Achieves near-MILP quality with 50–100× faster inference on 50–200 node routing problems.
+RFM integrates **five modules** into a single differentiable system:
+
+### **1. MILP-Aware Encoder**
+A structured encoder that maps MILP components into embeddings:
+
+- variable embeddings from cost coefficients + constraint participation  
+- constraint embeddings capturing flow, capacity, timing, precedence  
+- bipartite factor-graph representation of the constraint matrix \(A\)  
+- dual/violation features that reflect MILP geometry  
+
+This module grounds the network in **true MILP structure**, not just sequences.
 
 ---
 
-### 📄 Diffusion Priors for Routing Optimization (Working Title)  
-**Status:** Draft manuscript · ICML 2026 submission  
-[💻 Code (WIP)](https://github.com/ritwikareddykancharla/routing-diffusion)
+### **2. MILP-Transformer (Surrogate Solver Core)**
+A transformer stack that behaves like a **learned primal–dual solver**.
 
-Explores diffusion-based generative priors for producing feasible routing structures, enabling:
-- Structure-aware denoising for binary routing decisions  
-- Latent flow regularization  
-- Multi-sample proposal generation for surrogate MILPs  
+Key mechanisms:
 
----
+- **Dual violation signals** \( v = \max(0, Ax - b) \)  
+- **Dual ascent messages** \( A^\top v \)  
+- **MILP-aware attention** that prioritizes constraint-heavy interactions  
+- **Constraint-specialized Mixture-of-Experts**  
+- **Latent refinement / proximal steps** pushing toward feasibility  
 
-### 📄 Routing World Models for Multi-step Planning  
-**Status:** Draft manuscript · ICML 2026 submission  
-[💻 Code (WIP)](https://github.com/ritwikareddykancharla/routing-world-model)
-
-A MuZero-style latent dynamics model for forecasting:
-- congestion  
-- future constraints  
-- flow redistribution  
-- multi-hop rollout effects  
-
-Enables long-horizon planning on Amazon-style routing networks.
+This module performs **iterative optimization-like refinement**, producing near-integral routing decisions in milliseconds.
 
 ---
 
-## 🔬 Research
+### **3. Neural Routing Optimization Model (NROM)**
+A global reasoning model combining:
+
+- graph structure of the routing network  
+- MILP encoder embeddings  
+- multi-hop attention across facilities and arcs  
+
+NROM constructs an **initial routing assignment** that is globally coherent before refinement.
 
 ---
 
-### 📄 MILP-Transformer: A Neural Surrogate MILP Solver with Constraint Experts  
-**Status:** Preprint (ICML 2026 submission)
+### **4. Diffusion Routing Prior**
+A diffusion model that learns the **distribution of feasible routing solutions**.
 
-[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20(coming%20soon)-b31b1b.svg)](#)
-[![PDF](https://img.shields.io/badge/PDF-Main%20Paper-blue)](https://raw.githubusercontent.com/ritwikareddykanclarla/neural-milp-surrogate/main/paper/main.pdf)
-[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/neural-milp-surrogate)
-[![Colab](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/neural-milp-surrogate/blob/main/notebooks/00_setup.ipynb)
+It enables:
 
-**Abstract:**  
-A transformer-based neural surrogate for mixed-integer linear programs (MILPs).  
-The model integrates MILP algebra into attention using constraint violations and dual-like signals,  
-introduces constraint-specialized Mixture-of-Experts, and performs latent refinement steps that  
-approximate optimization. Achieves near-MILP feasibility and 50–100× faster inference on  
-50–200 node routing problems.
+- diverse feasible warm-starts for MILPs  
+- feasibility-preserving denoising  
+- multiple proposals for amortized optimization  
+- robustness under disruptions (SLA spikes, congestion, outages)  
+
+This dramatically reduces cold-start solver latency.
 
 ---
 
-### 📄 Diffusion Priors for Routing Optimization (Working Title)
-**Status:** Draft manuscript · ICML 2026 submission 
+### **5. Routing World Model (SSM / Mamba)**
+A sequential dynamics model that predicts:
 
-[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20(coming%20soon)-b31b1b.svg)](#)
-[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/routing-diffusion)
-[![Colab](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/routing-diffusion/blob/main/notebooks/00_setup.ipynb)
+- congestion propagation  
+- delays and SLA risk  
+- facility saturation  
+- future constraint evolution  
 
-**Abstract:**  
-Explores diffusion-based generative priors for routing and flow optimization.  
-The diffusion process learns the geometry of feasible routing structures and performs  
-structure-aware denoising aligned with MILP constraints. Enables diverse route sampling,  
-feasibility restoration, and multi-sample proposal generation for surrogate MILP solvers.
+Enables **lookahead planning**, MuZero-style rollouts, and dynamic routing policies.
 
 ---
 
-### 📄 Routing World Models for Multi-step Planning (Working Title)
-**Status:** Draft manuscript · ICML 2026 submission
+### **RFM Summary**
+RFM unifies:
 
-[![arXiv](https://img.shields.io/badge/arXiv-Preprint%20(coming%20soon)-b31b1b.svg)](#)
-[![Code](https://img.shields.io/badge/Code-GitHub-2b3137?logo=github)](https://github.com/ritwikareddykancharla/routing-world-model)
-[![Colab](https://img.shields.io/badge/Colab-Notebook-yellow?logo=googlecolab)](https://colab.research.google.com/github/ritwikareddykancharla/routing-world-model/blob/main/notebooks/00_setup.ipynb)
+- transformer-based surrogate solving  
+- graph-structured MILP embeddings  
+- diffusion generative priors  
+- sequential world models  
+- proximal refinement loops  
 
-**Abstract:**  
-A MuZero-inspired routing world model that predicts congestion, flow propagation,  
-constraint evolution, and multi-step rollout effects. The latent dynamics model enables  
-long-horizon planning on Amazon-style routing networks and supports differentiable internal  
-lookahead for optimization-aware decision-making.
+The result is a **differentiable optimization system** capable of generating fast, near-feasible routing decisions with strong generalization across network topologies.
 
----
-
+Full monograph:  
+**https://ritwikareddykancharla.github.io/rfm.pdf**
 
