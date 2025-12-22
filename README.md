@@ -1,99 +1,100 @@
-# Hi, I'm Ritwika — welcome to my research portfolio.  
+# Hi, I’m Ritwika — welcome to my applied ML systems portfolio  
 <img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
 
-## 👩‍🔬 Research Scientist / Applied Scientist  
-### Neural Optimization • Routing Models • Diffusion Priors • Mechanistic Interpretability
+## 👩‍🔬 Applied Scientist / Research Scientist  
+### End-to-End ML Systems • Retrieval • Computer Vision • LLM Serving
 
-My research centers on **neural optimization for large-scale routing and supply-chain systems**, with a focus on designing architectures that can **reason, plan, and optimize** like classical solvers—while running at *neural-inference speed*. I work across **mixed-integer programming (MILPs)**, **transformer-based surrogate solvers**, **diffusion generative models**, and **state-space world models**, building toward a unified class of **Routing Foundation Models (RFMs)**.
+I build **end-to-end machine learning systems** that integrate modern models with
+production-style infrastructure, evaluation, and deployment constraints.
 
-Modern logistics networks—especially at Amazon scale—push traditional MILP solvers and heuristics to their limits. At the same time, contemporary neural networks are beginning to exhibit **emergent combinatorial reasoning**, iterative refinement behaviors, and powerful distributional priors. My work aims to bridge these worlds by developing **differentiable surrogate optimization frameworks** that blend:  
-- the **algebraic structure** of MILPs,  
-- the **expressiveness** of deep generative models, and  
-- the **temporal forecasting ability** of world models.  
-
-The goal is a new paradigm of **real-time, structure-aware routing intelligence** that generalizes across geography, demand, and network conditions.
-
-I am also deeply interested in **mechanistic interpretability**—unpacking how neural routing models form constraint circuits, represent flows, propagate dual signals, and perform multi-step feasibility refinement. For high-stakes logistics systems, **transparent reasoning is not optional**, and interpretability is a first-class design principle in all my work.
+My work focuses on **applied ML pipelines** rather than isolated models — spanning
+information retrieval, multimodal learning, computer vision, and low-latency LLM
+serving. Each project mirrors how ML systems are designed, debugged, and scaled
+in real-world environments.
 
 ---
 
-# 🔬 Research
-
-Below are my five research papers on neural routing and optimization.  
-All implementations live in a unified repository:
-
-🔗 **GitHub:** https://github.com/ritwikareddykancharla/diffusion-mamba-routing
+## 📌 Selected Applied ML Systems
 
 ---
 
-## 📄 **1. Diffusion–Mamba Optimization for the Capacitated VRP (CVRP)**  
-[![arXiv](https://img.shields.io/badge/arXiv-preprint-8B0000?logo=arxiv&logoColor=white)](#)
-[![GitHub](https://img.shields.io/badge/Code-In%20Progress-yellow?logo=github)](https://github.com/ritwikareddykancharla/diffusion-mamba-routing)
-[![Colab](https://img.shields.io/badge/Colab-demo-blue?logo=googlecolab)](#)
+### 1️⃣ Hybrid Retrieval-Augmented Question Answering Pipeline   [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/hybrid-rag-qa)  
+**LLMs · Information Retrieval · RAG**
 
-**Abstract —**  
-This work introduces a diffusion-prior + Mamba refinement architecture for the Capacitated VRP.  
-Our approach learns the geometry of feasible CVRP assignments and performs constraint-aware latent steps  
-that mimic MILP optimization without search. The model serves as a neural surrogate solver capable  
-of generating high-quality capacity-feasible routes with fast inference.
+An end-to-end **retrieval-augmented QA system** over heterogeneous data sources,
+including structured tables and unstructured documents.
 
----
+- Hybrid sparse–dense retrieval using **BM25 (OpenSearch)** and **dense embeddings**
+- **Cross-encoder reranking** to improve top-k precision
+- **Grounded generation with explicit source attribution**
+- Offline evaluation via **retrieval recall** and **answer faithfulness**
 
-## 📄 **2. Temporal Diffusion Models for VRPTW**  
-[![arXiv](https://img.shields.io/badge/arXiv-preprint-8B0000?logo=arxiv&logoColor=white)](#)
-[![GitHub](https://img.shields.io/badge/Code-In%20Progress-yellow?logo=github)](https://github.com/ritwikareddykancharla/diffusion-mamba-routing)
-[![Colab](https://img.shields.io/badge/Colab-demo-blue?logo=googlecolab)](#)
-
-**Abstract —**  
-We propose a time-conditioned diffusion model for VRPTW that incorporates  
-window feasibility directly into the denoising dynamics.  
-A lightweight Mamba temporal layer captures evolving slack and deadline structure,  
-producing routes that remain consistent with service windows even under distribution shift.
+This system treats RAG as a **controlled, auditable pipeline**, not a black-box LLM.
 
 ---
 
-## 📄 **3. Diffusion Optimization for Pickup–Delivery VRP (PDVRP)**  
-[![arXiv](https://img.shields.io/badge/arXiv-preprint-8B0000?logo=arxiv&logoColor=white)](#)
-[![GitHub](https://img.shields.io/badge/Code-In%20Progress-yellow?logo=github)](https://github.com/ritwikareddykancharla/diffusion-mamba-routing)
-[![Colab](https://img.shields.io/badge/Colab-demo-blue?logo=googlecolab)](#)
+### 2️⃣ Real-Time Video Object Detection and Tracking Pipeline   [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/video-detection-tracking)  
+**Computer Vision · Deep Learning Systems**
 
-**Abstract —**  
-This paper extends diffusion-based routing to handle precedence, pairing,  
-and pickup–delivery constraints. A structured latent representation ensures  
-pickup and delivery nodes remain linked throughout the denoising trajectory,  
-while Mamba refinement enforces feasibility with respect to precedence  
-and vehicle capacity constraints.
+A real-time video analytics pipeline implementing **tracking-by-detection**
+for persistent multi-object tracking under latency constraints.
 
----
+- Object detection using **YOLOv8**
+- Multi-object tracking via **ByteTrack / DeepSORT**
+- GPU-accelerated inference with **structured outputs (CSV / JSON)**
+- Evaluation using **IDF1** and **MOTA**, with failure analysis
 
-## 📄 **4. Diffusion–Mamba Models for Multi-Depot VRP (MDVRP)**  
-[![arXiv](https://img.shields.io/badge/arXiv-preprint-8B0000?logo=arxiv&logoColor=white)](#)
-[![GitHub](https://img.shields.io/badge/Code-In%20Progress-yellow?logo=github)](https://github.com/ritwikareddykancharla/diffusion-mamba-routing)
-[![Colab](https://img.shields.io/badge/Colab-demo-blue?logo=googlecolab)](#)
-
-**Abstract —**  
-We develop depot-aware diffusion routes jointly with a Mamba global refinement  
-process that assigns customers to depots while respecting heterogeneous fleets  
-and capacity. The model captures cross-depot coupling and produces coherent  
-multi-region routing plans with a single forward pass.
+Designed to produce stable object identities across video sequences.
 
 ---
 
-## 📄 **5. Online Diffusion Routing for Dynamic VRP (DVRP)**  
-[![arXiv](https://img.shields.io/badge/arXiv-preprint-8B0000?logo=arxiv&logoColor=white)](#)
-[![GitHub](https://img.shields.io/badge/Code-In%20Progress-yellow?logo=github)](https://github.com/ritwikareddykancharla/diffusion-mamba-routing)
-[![Colab](https://img.shields.io/badge/Colab-demo-blue?logo=googlecolab)](#)
+### 3️⃣ Multimodal Product Representation and Retrieval Pipeline  [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/multimodal-product-retrieval)  
+**Vision–Language Models · Multimodal Retrieval**
 
-**Abstract —**  
-This work introduces an online routing framework that performs  
-diffusion rollouts over short-horizon futures, guided by a Mamba world model  
-capturing traffic and request dynamics. The method enables anticipatory routing  
-under real-time constraints and dynamic customer arrivals.
+A **joint vision–language embedding system** enabling cross-modal retrieval
+between product images and textual descriptions.
+
+- CLIP-style joint embeddings for images and text
+- Approximate nearest neighbor search using **FAISS**
+- Image↔text retrieval via cosine similarity
+- Evaluation using **Recall@K** and embedding alignment analysis
+
+Structured for scalability to large product catalogs.
 
 ---
 
-**All five works share a common philosophy:**  
-*Diffusion provides the structural prior; Mamba provides the optimization refinement.*  
+### 4️⃣ Low-Latency Large Language Model Inference Benchmark  [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/llm-inference-benchmark)  
+**ML Systems · LLM Serving**
 
+A benchmarking framework for **production-style LLM serving**, focused on
+latency–throughput tradeoffs under realistic request workloads.
 
+- Serving backends using **vLLM** and **SGLang**
+- Evaluation of **dynamic batching**, **KV-cache reuse**, and concurrency
+- Measurement of **P50 / P95 latency** and throughput saturation
+- Analysis of system-level scalability bottlenecks
 
+This project emphasizes **systems-level reasoning** over model internals.
+
+---
+
+## 📐 Design Philosophy
+
+Across all projects, I prioritize:
+
+- Explicit separation of system components  
+- Industry-standard open-source tooling  
+- Evaluation-driven iteration and failure analysis  
+- Transparency over black-box behavior  
+- Production-oriented architectural tradeoffs  
+
+Each system is intentionally scoped to be **interview-defensible** and
+representative of real-world ML deployments.
+
+---
+
+## 📊 Notes
+
+This portfolio is curated to showcase applied ML system design rather than
+research novelty alone. All repositories are independently runnable,
+documented, and designed for technical discussion.
