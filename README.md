@@ -33,7 +33,7 @@ This system treats RAG as a **controlled, auditable pipeline**, not a black-box 
 
 ---
 
-### 2️⃣ Real-Time Video Object Detection and Tracking Pipeline   [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/video-detection-tracking)  
+### 2️⃣ Real-Time Video Object Detection and Tracking Pipeline   [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/multi-object-tracking-pipeline)  
 **Computer Vision · Deep Learning Systems**
 
 A real-time video analytics pipeline implementing **tracking-by-detection**
