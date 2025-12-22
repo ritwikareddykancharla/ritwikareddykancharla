@@ -1,7 +1,7 @@
 # Hi, I’m Ritwika — welcome to my applied ML systems portfolio  
 <img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
 
-## 👩‍🔬 Applied Scientist / Research Scientist  
+## 👩‍🔬 Applied Scientist 
 ### End-to-End ML Systems • Retrieval • Computer Vision • LLM Serving
 
 I build **end-to-end machine learning systems** that integrate modern models with
