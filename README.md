@@ -75,7 +75,7 @@ to adapt position sizing and strategy selection under changing market conditions
 - Gaussian Mixture Model (GMM) regime classification  
 - Dynamic risk-aware position sizing  
 
-Status: **Completed / Iterating**
+Status: **Active**
 
 ---
 
@@ -89,7 +89,7 @@ patient communication while respecting privacy and deployment constraints.
 - Human-centered explanation and decision support  
 - Emphasis on safety, clarity, and constrained inference  
 
-Status: **Completed**
+Status: **Active**
 
 ---
 
@@ -103,7 +103,7 @@ from images to support sustainable grazing and agricultural decision-making.
 - Multimodal feature extraction  
 - Evaluation aligned with real-world agricultural metrics  
 
-Status: **Completed**
+Status: **Active**
 
 ---
 
@@ -117,7 +117,7 @@ beyond template-based or heuristic-only methods.
 - Structural accuracy–focused evaluation  
 - Biologically grounded constraints  
 
-Status: **Completed**
+Status: **Active**
 
 ---
 
