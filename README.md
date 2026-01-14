@@ -1,100 +1,151 @@
-# Hi, I’m Ritwika — welcome to my applied ML systems portfolio  
+# Hi, I’m Ritwika — Applied ML Systems & Competition Tracker ♟️🧠
 <img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
 
-## 👩‍🔬 Applied Scientist 
-### End-to-End ML Systems • Retrieval • Computer Vision • LLM Serving
+👩‍🔬 I build **end-to-end applied ML systems** for research challenges and competitive
+benchmarks, where models must reason reliably under **strict inference and evaluation
+constraints**.
 
-I build **end-to-end machine learning systems** that integrate modern models with
-production-style infrastructure, evaluation, and deployment constraints.
+My work focuses on turning complex problem settings into **controlled, reproducible
+pipelines** — emphasizing legality, verification, and performance over unconstrained
+model behavior.
 
-My work focuses on **applied ML pipelines** rather than isolated models — spanning
-information retrieval, multimodal learning, computer vision, and low-latency LLM
-serving. Each project mirrors how ML systems are designed, debugged, and scaled
-in real-world environments.
-
----
-
-## 📌 Selected Applied ML Systems
-
----
-
-### 1️⃣ Hybrid Retrieval-Augmented Question Answering Pipeline   [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/hybrid-rag-qa)  
-**LLMs · Information Retrieval · RAG**
-
-An end-to-end **retrieval-augmented QA system** over heterogeneous data sources,
-including structured tables and unstructured documents.
-
-- Hybrid sparse–dense retrieval using **BM25 (OpenSearch)** and **dense embeddings**
-- **Cross-encoder reranking** to improve top-k precision
-- **Grounded generation with explicit source attribution**
-- Offline evaluation via **retrieval recall** and **answer faithfulness**
-
-This system treats RAG as a **controlled, auditable pipeline**, not a black-box LLM.
+These projects prioritize:
+- structured reasoning  
+- verifiable decision-making  
+- evaluation-driven iteration  
+- systems that hold up under real constraints  
 
 ---
 
-### 2️⃣ Real-Time Video Object Detection and Tracking Pipeline   [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/multi-object-tracking-pipeline)  
-**Computer Vision · Deep Learning Systems**
-
-A real-time video analytics pipeline implementing **tracking-by-detection**
-for persistent multi-object tracking under latency constraints.
-
-- Object detection using **YOLOv8**
-- Multi-object tracking via **ByteTrack / DeepSORT**
-- GPU-accelerated inference with **structured outputs (CSV / JSON)**
-- Evaluation using **IDF1** and **MOTA**, with failure analysis
-
-Designed to produce stable object identities across video sequences.
+## 🧪 Active & Recent Competitions / Systems
 
 ---
 
-### 3️⃣ Multimodal Product Representation and Retrieval Pipeline  [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/multimodal-product-retrieval)  
-**Vision–Language Models · Multimodal Retrieval**
+### ♟️ [global-chess-challenge-2025](https://github.com/ritwikareddykancharla/global-chess-challenge-2025)  
+**Text-only chess reasoning under strict inference constraints**
 
-A **joint vision–language embedding system** enabling cross-modal retrieval
-between product images and textual descriptions.
+A language-model–based chess agent that must select **exactly one legal move** and
+produce a **one-sentence natural language rationale**, without access to search,
+external tools, or chess engines at inference time.
 
-- CLIP-style joint embeddings for images and text
-- Approximate nearest neighbor search using **FAISS**
-- Image↔text retrieval via cosine similarity
-- Evaluation using **Recall@K** and embedding alignment analysis
+- Input: FEN position, side to move, legal moves (UCI)
+- Output: UCI move + short explanation
+- Evaluation via **Average Centipawn Loss (ACPL)** and Swiss-style tournament play
+- Focus on structured reasoning, legality, and consistency
 
-Structured for scalability to large product catalogs.
-
----
-
-### 4️⃣ Low-Latency Large Language Model Inference Benchmark  [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/ritwikareddykancharla/llm-inference-benchmark)  
-**ML Systems · LLM Serving**
-
-A benchmarking framework for **production-style LLM serving**, focused on
-latency–throughput tradeoffs under realistic request workloads.
-
-- Serving backends using **vLLM** and **SGLang**
-- Evaluation of **dynamic batching**, **KV-cache reuse**, and concurrency
-- Measurement of **P50 / P95 latency** and throughput saturation
-- Analysis of system-level scalability bottlenecks
-
-This project emphasizes **systems-level reasoning** over model internals.
+Status: **Active**
 
 ---
 
-## 📐 Design Philosophy
+### 📜 [vesuvius-surface-detection](https://github.com/ritwikareddykancharla/vesuvius-surface-detection)  
+**Topology-aware 3D surface segmentation of ancient scrolls**
 
-Across all projects, I prioritize:
+A computer vision system for detecting and segmenting surface layers from 3D CT scans
+of carbonized Herculaneum papyrus scrolls, enabling downstream virtual unwrapping.
 
-- Explicit separation of system components  
-- Industry-standard open-source tooling  
-- Evaluation-driven iteration and failure analysis  
-- Transparency over black-box behavior  
-- Production-oriented architectural tradeoffs  
+- Volumetric CT preprocessing  
+- Geometry-aware surface detection  
+- Pixel-accurate segmentation for fragile historical artifacts  
 
-Each system is intentionally scoped to be **interview-defensible** and
-representative of real-world ML deployments.
+Status: **Active**
 
 ---
 
-## 📊 Notes
+### 🧮 [aimo-math-reasoner](https://github.com/ritwikareddykancharla/aimo-math-reasoner)  
+**Olympiad-level mathematics problem solving with verifiable reasoning**
 
-This portfolio is curated to showcase applied ML system design rather than
-research novelty alone. All repositories are independently runnable,
-documented, and designed for technical discussion.
+An open-source reasoning system designed to solve advanced math problems while
+emphasizing correctness, verification, and reproducibility.
+
+- Step-by-step mathematical reasoning  
+- Answer validation and trace analysis  
+- Evaluation aligned with competition scoring rules  
+
+Status: **Active**
+
+---
+
+### 📈 [weex-alpha-awakens-ai](https://github.com/ritwikareddykancharla/weex-alpha-awakens-ai)  
+**Multi-strategy quantitative trading agent**
+
+An AI-driven trading system combining statistical signals and regime awareness
+to adapt position sizing and strategy selection under changing market conditions.
+
+- Quantitative momentum strategies  
+- Gaussian Mixture Model (GMM) regime classification  
+- Dynamic risk-aware position sizing  
+
+Status: **Completed / Iterating**
+
+---
+
+### 🏥 [medgemma-care-assistant](https://github.com/ritwikareddykancharla/medgemma-care-assistant)  
+**Human-centered clinical assistant using open HAI-DEF models**
+
+A healthcare-focused LLM application designed to support clinical workflows and
+patient communication while respecting privacy and deployment constraints.
+
+- Built using MedGemma and open Health AI models  
+- Human-centered explanation and decision support  
+- Emphasis on safety, clarity, and constrained inference  
+
+Status: **Completed**
+
+---
+
+### 🌱 [csiro-image2biomass](https://github.com/ritwikareddykancharla/csiro-image2biomass)  
+**Vision-based pasture biomass estimation**
+
+A computer vision and multimodal learning system that predicts pasture biomass
+from images to support sustainable grazing and agricultural decision-making.
+
+- Image-based regression models  
+- Multimodal feature extraction  
+- Evaluation aligned with real-world agricultural metrics  
+
+Status: **Completed**
+
+---
+
+### 🧬 [rna-3d-folding](https://github.com/ritwikareddykancharla/rna-3d-folding)  
+**Predicting RNA tertiary structure from sequence**
+
+A machine learning approach to RNA 3D structure prediction, targeting improvements
+beyond template-based or heuristic-only methods.
+
+- Sequence-to-structure modeling  
+- Structural accuracy–focused evaluation  
+- Biologically grounded constraints  
+
+Status: **Completed**
+
+---
+
+### 🧠 [multimodal-reasoning-stack](https://github.com/ritwikareddykancharla/multimodal-reasoning-stack)  
+**Enterprise-scale multimodal decision intelligence system**
+
+A full-stack reasoning engine that ingests documents, images, audio, and video,
+builds structured knowledge representations, and surfaces strategic insights.
+
+- Multimodal ingestion pipelines  
+- Knowledge graph construction  
+- Cross-modal reasoning and signal detection  
+
+Status: **Ongoing**
+
+---
+
+### 🧩 strategic-insight-engine  
+**Internal decision-support and reasoning system**
+
+A private, production-oriented system for synthesizing strategic insights from
+heterogeneous and noisy data sources.
+
+Status: **Private / Ongoing**
+
+---
+
+## 📌 Notes
+
+This repository is intentionally **dynamic**.  
+Projects are added, archived, or evolved as competitions progress.
