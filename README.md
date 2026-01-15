@@ -135,7 +135,7 @@ Status: **Ongoing**
 
 ---
 
-### 🧩 strategic-insight-engine  
+### 🧩 [strategic-insight-engine](https://github.com/ritwikareddykancharla/strategic-insight-engine)  
 **Internal decision-support and reasoning system**
 
 A private, production-oriented system for synthesizing strategic insights from
