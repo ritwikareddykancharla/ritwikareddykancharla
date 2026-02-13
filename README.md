@@ -1,151 +1,77 @@
-# Hi, I’m Ritwika — Applied ML Systems & Competition Tracker ♟️🧠
+# Hi, I’m Ritwika — Systems Engineer for AI Infrastructure 🛡️🤖
 <img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
 
-👩‍🔬 I build **end-to-end applied ML systems** for research challenges and competitive
-benchmarks, where models must reason reliably under **strict inference and evaluation
-constraints**.
+🛠️ I build **high-reliability infrastructure** for AI systems, focusing on the hardest engineering challenges: **low-latency media transport**, **inference observability**, **distributed storage**, and **structured reasoning pipelines**.
 
-My work focuses on turning complex problem settings into **controlled, reproducible
-pipelines** — emphasizing legality, verification, and performance over unconstrained
-model behavior.
+My work sits at the intersection of **Site Reliability Engineering (SRE)** and **ML Systems**. I prioritize observability over black-box monitoring, correctness over convenience, and performance over abstraction.
 
-These projects prioritize:
-- structured reasoning  
-- verifiable decision-making  
-- evaluation-driven iteration  
-- systems that hold up under real constraints  
+These projects demonstrate specific skills for scaling AI:
+- **Reliability:** Monitoring the "token path" and GPU behavior.
+- **Networking:** Building real-time media infrastructure (WebRTC/SFU).
+- **Storage:** Engineering database internals from scratch.
+- **Data:** Structuring knowledge for complex reasoning.
 
 ---
 
-## 🧪 Active & Recent Competitions / Systems
+## 🧪 Recent Systems Projects
 
 ---
 
-### ♟️ [global-chess-challenge-2025](https://github.com/ritwikareddykancharla/global-chess-challenge-2025)  
-**Text-only chess reasoning under strict inference constraints**
+### 🕸️ [graph-enhanced-rag](https://github.com/ritwikareddykancharla/graph-enhanced-rag)  
+**Knowledge Graph Construction Engine (Knowledge Innovation)**
 
-A language-model–based chess agent that must select **exactly one legal move** and
-produce a **one-sentence natural language rationale**, without access to search,
-external tools, or chess engines at inference time.
+Standard RAG struggles with multi-hop reasoning. This backend system ingests unstructured documents and autonomously builds a **Knowledge Graph** inside Postgres to capture relationships between entities.
 
-- Input: FEN position, side to move, legal moves (UCI)
-- Output: UCI move + short explanation
-- Evaluation via **Average Centipawn Loss (ACPL)** and Swiss-style tournament play
-- Focus on structured reasoning, legality, and consistency
+- **Extraction:** Uses an LLM to extract entities and relations (`Server A` → *depends_on* → `Database B`) from raw text.
+- **Storage:** Utilizes **Recursive CTEs** in Postgres to traverse the graph efficiently without a separate graph DB.
+- **Querying:** An API that answers questions like "If Node X goes down, what features are impacted?" by traversing the graph structure.
 
-Status: **Active**
+**Tech Stack:** `Python (FastAPI)` `Postgres` `Recursive CTEs` `Pydantic`
 
 ---
 
-### 📜 [vesuvius-surface-detection](https://github.com/ritwikareddykancharla/vesuvius-surface-detection)  
-**Topology-aware 3D surface segmentation of ancient scrolls**
+### 📡 [token-path-observability](https://github.com/ritwikareddykancharla/token-path-observability)  
+**Observability stack for LLM inference (AI Reliability)**
 
-A computer vision system for detecting and segmenting surface layers from 3D CT scans
-of carbonized Herculaneum papyrus scrolls, enabling downstream virtual unwrapping.
+Standard web metrics (CPU/RAM) fail for LLMs. This project provides a dedicated monitoring dashboard for the **"token path"**—the lifecycle of a prompt from request to final token generation.
 
-- Volumetric CT preprocessing  
-- Geometry-aware surface detection  
-- Pixel-accurate segmentation for fragile historical artifacts  
+- **Metrics:** Tracks **Time-to-First-Token (TTFT)** and **Inter-Token Latency (ITL)** to diagnose user-perceived lag.
+- **Accelerator Awareness:** Monitors GPU VRAM vs. Compute utilization to identify memory-bound bottlenecks.
+- **Implementation:** Prometheus exporters for `vLLM`/`TGI`, custom Grafana dashboards.
+- **Impact:** Enables proactive detection of "tail latencies" in model serving.
 
-Status: **Active**
-
----
-
-### 🧮 [aimo-math-reasoner](https://github.com/ritwikareddykancharla/aimo-math-reasoner)  
-**Olympiad-level mathematics problem solving with verifiable reasoning**
-
-An open-source reasoning system designed to solve advanced math problems while
-emphasizing correctness, verification, and reproducibility.
-
-- Step-by-step mathematical reasoning  
-- Answer validation and trace analysis  
-- Evaluation aligned with competition scoring rules  
-
-Status: **Active**
+**Tech Stack:** `Python` `Prometheus` `Grafana` `Docker` `NVIDIA SMI`
 
 ---
 
-### 📈 [weex-alpha-awakens-ai](https://github.com/ritwikareddykancharla/weex-alpha-awakens-ai)  
-**Multi-strategy quantitative trading agent**
+### 🖥️ [realtime-sfu-engine](https://github.com/ritwikareddykancharla/realtime-sfu-engine)  
+**Custom Selective Forwarding Unit in Go (Realtime WebRTC)**
 
-An AI-driven trading system combining statistical signals and regime awareness
-to adapt position sizing and strategy selection under changing market conditions.
+Most engineers use black-box SDKs (Twilio/Agora). I built the core media server infrastructure from scratch to understand how to move audio/video data instantly.
 
-- Quantitative momentum strategies  
-- Gaussian Mixture Model (GMM) regime classification  
-- Dynamic risk-aware position sizing  
+- **Core Logic:** Built a minimalist **Selective Forwarding Unit (SFU)** using the Pion WebRTC library. It routes video streams between users *without* decoding them (preserving CPU).
+- **Adaptive Streaming:** Implemented **Simulcast** routing—the server detects if a user's network slows down and automatically switches them to a lower-resolution stream.
+- **Signaling:** Custom WebSocket signaling server for SDP offer/answer exchange.
 
-Status: **Active**
-
----
-
-### 🏥 [medgemma-care-assistant](https://github.com/ritwikareddykancharla/medgemma-care-assistant)  
-**Human-centered clinical assistant using open HAI-DEF models**
-
-A healthcare-focused LLM application designed to support clinical workflows and
-patient communication while respecting privacy and deployment constraints.
-
-- Built using MedGemma and open Health AI models  
-- Human-centered explanation and decision support  
-- Emphasis on safety, clarity, and constrained inference  
-
-Status: **Active**
+**Tech Stack:** `Go` `Pion WebRTC` `WebSockets` `Docker`
 
 ---
 
-### 🌱 [csiro-image2biomass](https://github.com/ritwikareddykancharla/csiro-image2biomass)  
-**Vision-based pasture biomass estimation**
+### 🌳 [lsm-storage-engine](https://github.com/ritwikareddykancharla/lsm-storage-engine)  
+**Custom Key-Value Store with LSM Tree (Online Storage)**
 
-A computer vision and multimodal learning system that predicts pasture biomass
-from images to support sustainable grazing and agricultural decision-making.
+To understand how databases scale, I built one. This is a from-scratch implementation of a Log-Structured Merge-tree (LSM), the architecture used by RocksDB and Cassandra.
 
-- Image-based regression models  
-- Multimodal feature extraction  
-- Evaluation aligned with real-world agricultural metrics  
+- **Write Path:** Implements an in-memory **MemTable** (Skip List) and persistent **SSTables** for high-throughput writes.
+- **Crash Recovery:** Implements a **Write-Ahead Log (WAL)** to ensure durability during failures.
+- **Read Optimization:** Implements **Bloom Filters** to reduce disk I/O for non-existent keys.
+- **Compaction:** Background process merging SSTables to reclaim space and speed up reads.
 
-Status: **Active**
-
----
-
-### 🧬 [rna-3d-folding](https://github.com/ritwikareddykancharla/rna-3d-folding)  
-**Predicting RNA tertiary structure from sequence**
-
-A machine learning approach to RNA 3D structure prediction, targeting improvements
-beyond template-based or heuristic-only methods.
-
-- Sequence-to-structure modeling  
-- Structural accuracy–focused evaluation  
-- Biologically grounded constraints  
-
-Status: **Active**
-
----
-
-### 🧠 [multimodal-reasoning-stack](https://github.com/ritwikareddykancharla/multimodal-reasoning-stack)  
-**Enterprise-scale multimodal decision intelligence system**
-
-A full-stack reasoning engine that ingests documents, images, audio, and video,
-builds structured knowledge representations, and surfaces strategic insights.
-
-- Multimodal ingestion pipelines  
-- Knowledge graph construction  
-- Cross-modal reasoning and signal detection  
-
-Status: **Ongoing**
-
----
-
-### 🧩 [strategic-insight-engine](https://github.com/ritwikareddykancharla/strategic-insight-engine)  
-**Internal decision-support and reasoning system**
-
-A private, production-oriented system for synthesizing strategic insights from
-heterogeneous and noisy data sources.
-
-Status: **Private / Ongoing**
+**Tech Stack:** `C++` (or `Rust`) `Posix Threads` `File I/O`
 
 ---
 
 ## 📌 Notes
 
-This repository is intentionally **dynamic**.  
-Projects are added, archived, or evolved as competitions progress.
+This portfolio is focused on **systems fundamentals**.  
+Each project targets a specific bottleneck in modern AI companies: inference latency, media transport, data durability, and knowledge structure.
