@@ -1,4 +1,4 @@
-# Hi, I’m Ritwika — Systems Engineer for AI Infrastructure 🛡️🤖
+# Hi, I’m Ritwika — Software Engineer for AI Infrastructure 🛡️🤖
 <img src="assets/lottie/cat_big.gif" width="200px" align="right"/>
 
 🛠️ I build **high-reliability infrastructure** for AI systems, focusing on the hardest engineering challenges: **low-latency media transport**, **inference observability**, **distributed storage**, and **structured reasoning pipelines**.
