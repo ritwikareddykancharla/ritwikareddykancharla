@@ -30,6 +30,19 @@ Standard RAG struggles with multi-hop reasoning. This backend system ingests uns
 
 ---
 
+### 🤖 [agentic-ops-platform](https://github.com/ritwikareddykancharla/agentic-ops-platform)  
+**Reliable framework for autonomous operations (Knowledge Innovation)**
+
+Internal operations (support, integrity) are often manual and brittle. This platform uses a state-machine-driven approach to orchestrate AI agents for robust task execution.
+
+- **Architecture:** Specialized agents (`Classifier`, `ToolRunner`, `Escalator`) managed by a central Orchestrator.
+- **Safety:** Every agent "thought" and "action" is logged to Postgres for compliance and debugging.
+- **Tooling:** Agents can safely execute backend functions (e.g., `refund_user`, `reset_api_key`) via a defined interface.
+
+**Tech Stack:** `Python` `Celery` `LangChain` `Postgres`
+
+---
+
 ### 📡 [token-path-observability](https://github.com/ritwikareddykancharla/token-path-observability)  
 **Observability stack for LLM inference (AI Reliability)**
 
@@ -41,6 +54,19 @@ Standard web metrics (CPU/RAM) fail for LLMs. This project provides a dedicated 
 - **Impact:** Enables proactive detection of "tail latencies" in model serving.
 
 **Tech Stack:** `Python` `Prometheus` `Grafana` `Docker` `NVIDIA SMI`
+
+---
+
+### 🎙️ [browser-to-llm-voice-pipeline](https://github.com/ritwikareddykancharla/browser-to-llm-voice-pipeline)  
+**Real-time WebRTC interface for LLMs (Realtime WebRTC)**
+
+Voice interfaces to AI usually rely on slow HTTP APIs (Record -> Upload -> Process -> Download -> Play). This project implements a full-stack WebRTC pipeline for real-time duplex streaming.
+
+- **Low Latency:** Streams audio directly from browser to inference server and back, cutting latency from seconds to milliseconds.
+- **Signaling:** Custom WebSocket signaling server handling SDP offer/answer exchanges and ICE candidates.
+- **VAD:** Implements Voice Activity Detection to allow natural interruptions during AI speech.
+
+**Tech Stack:** `React` `Node.js/Go` `WebRTC` `WebSocket` `Live Demo`
 
 ---
 
